@@ -1,0 +1,221 @@
+port: 7890
+socks-port: 7891
+mixed-port: 7893
+allow-lan: true
+mode: rule
+log-level: warning
+ipv6: false
+external-controller: 127.0.0.1:9090
+unified-delay: true
+profile:
+  store-selected: true
+
+proxy-providers:
+  Airport1:
+    type: http
+    url: "https://1e665040583a218a3de492ac0dc72e38.cdn-res-oss-cn-hongkong-aliyuncs-file.com/s?t=1e665040583a218a3de492ac0dc72e38.jpg"
+    interval: 86400
+    path: ./providers/Airport1.yaml
+    health-check:
+      enable: true
+      interval: 300
+      url: http://www.gstatic.com/generate_204
+
+proxy-groups:
+  - name: 🚀 默认代理
+    type: select
+    proxies: [🔯 香港故转, 🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, DIRECT]
+
+  - name: 📹 YouTube
+    type: select
+    proxies: [🔯 美国故转, 🔯 香港故转, 🔯 日本故转, 🔯 狮城故转, ♻️ 美国自动, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, DIRECT]
+
+  - name: 🍀 Google
+    type: select
+    proxies: [🔯 香港故转, 🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, DIRECT]
+
+  - name: 🤖 ChatGPT
+    type: select
+    proxies: [🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, DIRECT]
+
+  - name: 👨🏿‍💻 GitHub
+    type: select
+    proxies: [🔯 香港故转, 🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, DIRECT]
+
+  - name: 🐬 OneDrive
+    type: select
+    proxies: [🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, DIRECT]
+
+  - name: 🪟 Microsoft
+    type: select
+    proxies: [🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, DIRECT]
+
+  - name: 🎵 TikTok
+    type: select
+    proxies: [🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, DIRECT]
+
+  - name: 📲 Telegram
+    type: select
+    proxies: [🔯 香港故转, 🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, DIRECT]
+
+  - name: 🎥 NETFLIX
+    type: select
+    proxies: [🔯 狮城故转, 🔯 香港故转, 🔯 日本故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, DIRECT]
+
+  - name: ✈️ Speedtest
+    type: select
+    proxies: [🔯 香港故转, 🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, DIRECT]
+
+  - name: 💶 PayPal
+    type: select
+    proxies: [🔯 日本故转, 🔯 香港故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, DIRECT]
+
+  - name: 🍎 Apple
+    type: select
+    proxies: [DIRECT, 🚀 默认代理]
+
+  - name: 🎯 直连
+    type: select
+    proxies: [DIRECT, 🚀 默认代理]
+
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies: [🔯 香港故转, 🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, DIRECT]
+
+  - name: tk 土耳其节点
+    type: select
+    use: [Airport1]
+    filter: "(?i)土|Turkey|Tur|tur"
+
+  - name: 🇭🇰 香港节点
+    type: select
+    use: [Airport1]
+    filter: "(?i)港|hk|hongkong|hong kong"
+
+  - name: 🇯🇵 日本节点
+    type: select
+    use: [Airport1]
+    filter: "(?i)日|jp|japan"
+
+  - name: 🇸🇬 狮城节点
+    type: select
+    use: [Airport1]
+    filter: "(?i)新加坡|坡|狮城|SG|Singapore"
+
+  - name: 🇺🇲 美国节点
+    type: select
+    use: [Airport1]
+    filter: "(?i)美|us|unitedstates|united states"
+
+  - name: 🔯 香港故转
+    type: fallback
+    use: [Airport1]
+    url: http://www.gstatic.com/generate_204
+    tolerance: 20
+    interval: 300
+    filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"
+
+  - name: 🔯 日本故转
+    type: fallback
+    use: [Airport1]
+    url: http://www.gstatic.com/generate_204
+    tolerance: 20
+    interval: 300
+    filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$"
+
+  - name: 🔯 狮城故转
+    type: fallback
+    use: [Airport1]
+    url: http://www.gstatic.com/generate_204
+    tolerance: 20
+    interval: 300
+    filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(台|日|韩|深|美)).)*$"
+
+  - name: 🔯 美国故转
+    type: fallback
+    use: [Airport1]
+    url: http://www.gstatic.com/generate_204
+    tolerance: 20
+    interval: 300
+    filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|韩|新|日)).)*$"
+
+  - name: ♻️ 香港自动
+    type: url-test
+    use: [Airport1]
+    url: http://www.gstatic.com/generate_204
+    tolerance: 20
+    interval: 300
+    filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"
+
+  - name: ♻️ 日本自动
+    type: url-test
+    use: [Airport1]
+    url: http://www.gstatic.com/generate_204
+    tolerance: 20
+    interval: 300
+    filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$"
+
+  - name: ♻️ 狮城自动
+    type: url-test
+    use: [Airport1]
+    url: http://www.gstatic.com/generate_204
+    tolerance: 20
+    interval: 300
+    filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(港|台|韩|日|美)).)*$"
+
+  - name: ♻️ 美国自动
+    type: url-test
+    use: [Airport1]
+    url: http://www.gstatic.com/generate_204
+    tolerance: 20
+    interval: 300
+    filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"
+
+  - name: ♻️ 自动选择
+    type: url-test
+    use: [Airport1]
+    url: http://www.gstatic.com/generate_204
+    tolerance: 20
+    interval: 300
+    filter: "^(?!.*直连).*$"
+
+  - name: 🌐 全部节点
+    type: select
+    use: [Airport1]
+
+rules:
+  - DOMAIN-SUFFIX,qichiyu.com,🚀 默认代理
+  - DOMAIN-KEYWORD,gaijin,tk 土耳其节点
+  - DOMAIN-SUFFIX,openai.com,🤖 ChatGPT
+  - DOMAIN-SUFFIX,chatgpt.com,🤖 ChatGPT
+  - DOMAIN-SUFFIX,oaistatic.com,🤖 ChatGPT
+  - DOMAIN-SUFFIX,github.com,👨🏿‍💻 GitHub
+  - DOMAIN-SUFFIX,githubusercontent.com,👨🏿‍💻 GitHub
+  - DOMAIN-SUFFIX,youtube.com,📹 YouTube
+  - DOMAIN-SUFFIX,googlevideo.com,📹 YouTube
+  - DOMAIN-SUFFIX,ytimg.com,📹 YouTube
+  - DOMAIN-SUFFIX,google.com,🍀 Google
+  - DOMAIN-SUFFIX,gstatic.com,🍀 Google
+  - DOMAIN-SUFFIX,googleapis.com,🍀 Google
+  - DOMAIN-SUFFIX,telegram.org,📲 Telegram
+  - DOMAIN-SUFFIX,t.me,📲 Telegram
+  - DOMAIN-SUFFIX,telegram.me,📲 Telegram
+  - DOMAIN-SUFFIX,netflix.com,🎥 NETFLIX
+  - DOMAIN-SUFFIX,nflxvideo.net,🎥 NETFLIX
+  - DOMAIN-SUFFIX,nflximg.net,🎥 NETFLIX
+  - DOMAIN-SUFFIX,paypal.com,💶 PayPal
+  - DOMAIN-SUFFIX,paypalobjects.com,💶 PayPal
+  - DOMAIN-SUFFIX,tiktok.com,🎵 TikTok
+  - DOMAIN-SUFFIX,tiktokv.com,🎵 TikTok
+  - DOMAIN-SUFFIX,byteoversea.com,🎵 TikTok
+  - DOMAIN-SUFFIX,onedrive.com,🐬 OneDrive
+  - DOMAIN-SUFFIX,live.com,🪟 Microsoft
+  - DOMAIN-SUFFIX,microsoft.com,🪟 Microsoft
+  - DOMAIN-SUFFIX,office.com,🪟 Microsoft
+  - DOMAIN-SUFFIX,apple.com,🍎 Apple
+  - DOMAIN-SUFFIX,icloud.com,🍎 Apple
+  - DOMAIN-SUFFIX,speedtest.net,✈️ Speedtest
+  - DOMAIN-SUFFIX,ooklaserver.net,✈️ Speedtest
+  - DOMAIN-SUFFIX,cn,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,🐟 漏网之鱼
