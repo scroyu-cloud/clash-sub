@@ -1,0 +1,38 @@
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: rule
+log-level: info
+ipv6: false
+external-controller: 127.0.0.1:9090
+
+proxy-providers:
+  Airport1:
+    type: http
+    url: "https://1e665040583a218a3de492ac0dc72e38.cdn-res-oss-cn-hongkong-aliyuncs-file.com/s?t=1e665040583a218a3de492ac0dc72e38.jpg"
+    interval: 86400
+    path: ./providers/Airport1.yaml
+    health-check:
+      enable: true
+      interval: 300
+      url: http://www.gstatic.com/generate_204
+
+proxy-groups:
+  - name: 节点选择
+    type: select
+    use:
+      - Airport1
+    proxies:
+      - DIRECT
+
+  - name: 自动选择
+    type: url-test
+    use:
+      - Airport1
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+
+rules:
+  - DOMAIN-SUFFIX,cn,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,节点选择
